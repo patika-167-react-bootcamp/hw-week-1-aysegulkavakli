@@ -1,12 +1,8 @@
-const accessible = "admin";
+const accessible = ["admin", "moderator", "superadmin", "guest"];
 
-String.prototype.includesCi = function (val) {
-    if (this.toUpperCase().includes(val.toUpperCase())) {
-        //toUpperCase() methodu yerinde toLowerCase() methodunu da kullanabilirdik
-        return console.log(true);
-    } else {
-        return console.log(false);
-    }
+Array.prototype.includesCi = function (val) {
+    //Here we also can use toLowerCase() method
+    return this.map((a) => a.toUpperCase()).includes(val.toUpperCase()) ? console.log(true) : console.log(false)
 }
 
-accessible.includesCi("aDmIn")
+accessible.includesCi("modeRatOR")
